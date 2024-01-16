@@ -1,0 +1,3 @@
+{
+  "main-flow": "likes-prediction.py:main_flow"
+}
