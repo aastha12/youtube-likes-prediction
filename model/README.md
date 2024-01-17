@@ -18,7 +18,12 @@ cd model
 . /Users/aasth/.local/share/virtualenvs/model-RCtldyqy/bin/activate
 ```
 
-4. While in the `model-RCtldyqy` venv, I will convert the [likes-prediction.ipynb](./likes-prediction.ipynb) to a script using:
+4. While in the `model` folder and in the `model` venv, run the below command to open the mlflow ui:
+```bash
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+```
+
+5. While in the `model-RCtldyqy` venv, I will convert the [likes-prediction.ipynb](./likes-prediction.ipynb) to a script using:
 ```bash 
 jupyter nbconvert --to python likes-prediction.ipynb
 ```
