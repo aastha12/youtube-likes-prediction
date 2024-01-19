@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+scikit-learn = "==1.3.2"
+flask = "*"
+lightgbm = "==4.2.0"
+pandas = "*"
+gunicorn = "*"
+prefect = "*"
+psycopg = "*"
+evidently = "*"
+psycopg-binary = "*"
+
+[dev-packages]
+requests = "*"
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.5"

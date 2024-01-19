@@ -13,8 +13,9 @@
  ```bash
  cd deployment
  . /opt/homebrew/anaconda3/bin/activate #activate conda
-pipenv install scikit-learn==1.3.2 flask
+pipenv install --python 3.11
 pipenv shell
+pipenv install scikit-learn==1.3.2 flask
 pipenv install lightgbm==4.2.0
  ```
 
@@ -24,6 +25,8 @@ pipenv install lightgbm==4.2.0
  ```
 
 ## Flask:
+
+One popular mechanism for deploying (or serving) a model is using a REST API. Deploying a model as an API means that we create a webserver with a url that accepts requests. End users or "clients" can make requests to the API and pass a list of data points containing features (usually as json). This list of features is fed into the model and the model spits out a list of predictions corresponding to those features. These list of predictions are sent back to the client (again usually as json).
 
  4. I will put the lightgbm model in a Flask application so that we can interact with it and get a prediction:
  
