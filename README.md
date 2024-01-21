@@ -1,16 +1,23 @@
-Will build MLOps system that predicts the popularity of a Youtube video by predicting the number of likes a video will get.
+This is a local MLOps system that predicts the popularity of a Youtube video by predicting the number of likes a video will get.
 
-Data for the video is taken from [this Kaggle dataset](https://www.kaggle.com/datasets/thedevastator/youtube-video-and-channel-analysis).
+Data for this project is taken from [this Kaggle dataset](https://www.kaggle.com/datasets/thedevastator/youtube-video-and-channel-analysis).
 
 Steps:
 1. Train a model on the above dataset tracking the experiments using MLFlow ✅
 
+<img src="/images/mlflow runs compare.png" width=400>
+
 2. Create a workflow orchestration using prefect ✅
+
+<img src="/images/prefect workflow.png" width=400>
 
 3. Deploy the model as web service using flask and docker ✅
 
-4. Monitor the performance of the model using Evidently ✅
+<img src="/images/deployment.png" width=400>
 
+4. Monitor the performance of the model using Evidently and build grafana dashboard based on Evidently metrics ✅
+
+<img src="/images/grafana.png" width=400>
 
 I will try to follow the best coding practices by
 - implementing pytests ✅
