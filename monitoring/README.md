@@ -13,6 +13,8 @@ pipenv shell
  . /Users/aasth/.local/share/virtualenvs/monitoring-rO_KQq52/bin/activate
  ```
 
+## Running Evidently:
+
  4.
  
  Make sure to have the docker app running and the `docker-compose up --build` command running in a terminal with the py11 enviroment before proceeding to the next step.
@@ -37,3 +39,6 @@ Then in another tab, open up Grafana by going to localhost:3000 and enter admin 
 5. To save the grafana dashboard:
 
 I have created a [grafana dashboards file](./config/grafana_dashboards.yaml) where I have used a standard configuration format that is used when creating dashboards. I also created a [data_drift.json](./dashboards/data_drift.json) file that contains the JSON model of the dashboard that I want to save.
+
+
+*Note: Docker compose is for orchestrating multiple containers. If these images already exist in the docker registry, then it's better to list them in the compose file. If these images or some other images have to be built from files on your computer, then you can describe the processes of building those images in a Dockerfile.*

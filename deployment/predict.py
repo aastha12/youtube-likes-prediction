@@ -22,7 +22,7 @@ def prepare_data(video):
 
 def predict(data):
     preds = model.predict(data)
-    return preds[0]
+    return int(preds[0])
 
 
 app = Flask("yt-likes-prediction")

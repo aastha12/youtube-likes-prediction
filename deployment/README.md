@@ -32,7 +32,7 @@ One popular mechanism for deploying (or serving) a model is using a REST API. De
  
     - Check out the `predict.py` file to see how I added Flask to the prediction script. (Make sure you are in the `deployment` virtual environment and `deployment` folder and run `python predict.py` to run the prediction script.)
 
-    - To request a prediction from the server, I created another file `test.py`. This file will post the video information to the server and print out the response (i.e: The predicted likes). While the prediction script is running on the terminal, open up another terminal and make sure you are in the `deployment` virtual environment and run `python test.py` to run the get a prediction. 
+    - To request a prediction from the server, I created another file `test.py`. This file will post the video information to the server and print out the response (i.e: The predicted likes). While the prediction script is running on the terminal, open up another terminal and make sure you are in the `deployment` virtual environment and run `python test.py` to run the get a `{'videoLikeCount': 42.3127140997288}`. 
 
 ## WGSI server:
 
@@ -62,4 +62,6 @@ And run the container that was built with:
 docker run -it --rm -p 9696:9696 youtube-likes-prediction-service:v1
 ```
 
-Now when we request predictions like earlier, we're instead calling the WGSI within the Docker Container. While the container is running in the terminal , open another terminal and make sure you are in the `deployment` venv and run `python test.py` to run the get a prediction.
+Now when we request predictions like earlier, we're instead calling the WGSI within the Docker Container. While the container is running in the terminal , open another terminal and make sure you are in the `deployment` venv and run `python test.py` to run the get `{'videoLikeCount': 42.3127140997288}`.
+
+<img src="/images/deployment.png" width=700>

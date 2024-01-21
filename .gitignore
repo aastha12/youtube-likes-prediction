@@ -3,7 +3,7 @@ data/
 .bin
 *.db
 *.vscode
-
+.pytest_cache
 *.csv
 
 .venv
