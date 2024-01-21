@@ -16,7 +16,7 @@ pipenv shell
 ## Running Evidently:
 
  4.
- 
+
  Make sure to have the docker app running and the `docker-compose up --build` command running in a terminal with the py11 enviroment before proceeding to the next step.
 
 Once the above file is ready, open up a terminal with `monitoring` environment and folder and run `prefect project init`. You'll get a list of options to choose from. Hit enter on "docker" and enter the image_name as `evidently-prefect` and the tag as `prefect`.
@@ -25,15 +25,15 @@ Open up another terminal with `monitoring` where you will run `prefect config se
 
 Open up another terminal with `monitoring`, now run `python evidently_metrics_calculation.py`:
 
-<img src="./images/terminal.png" width=700>
+<img src="/images/terminal.png" width=700>
 
 When you log into Adminer at localhost:8080 with the credentials mentioned in the evidently_metrics_calculation.py, you'll see that the `evidently_metrics` table now has updated information:
 
-<img src="./images/adminer.png" width=700>
+<img src="/images/adminer.png" width=700>
 
 Then in another tab, open up Grafana by going to localhost:3000 and enter admin as both username and password. Create a new visualization using PostgreSQL as the system (cause we updated it with information):
 
-<img src="./images/grafana.png" width=700>
+<img src="/images/grafana.png" width=700>
 
 
 5. To save the grafana dashboard:

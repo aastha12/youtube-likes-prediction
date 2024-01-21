@@ -7,15 +7,15 @@ Steps:
 
 2. Create a workflow orchestration using prefect ✅
 
-3. Deploy the model as web service using flask and docker ✅  
+3. Deploy the model as web service using flask and docker ✅
 
-4. Monitor the performance of the model using Evidently ✅ 
+4. Monitor the performance of the model using Evidently ✅
 
 
-I will try to follow the best coding practices by 
-- implementing pytests
-- using linters and code formatters
-- using makefile and pre-commit hooks
+I will try to follow the best coding practices by
+- implementing pytests ✅
+- using linters and code formatters ✅
+- using makefile and pre-commit hooks ✅
 
 
 Potential Improvements:

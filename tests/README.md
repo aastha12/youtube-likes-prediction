@@ -89,3 +89,12 @@ Run `pre-commit install` in the command line. This creates a pre-commit folder i
 Now, proceed to do `git add .` and `git commit -m "some message"` and you will see that some hooks may say "Failed" but it will have a "files were modified by this hook" message which means the hook modified the file to make it pass. So the next time you do `git add .` and `git commit`, you'll notice that same hook will now Pass.
 
 <img src="/images/pre-commit-hooks.png" width=700>
+
+## MakeFile
+
+make is a tool for automating various steps for production. I will include the following in the MakeFule:
+
+1. tests (using `pytest`)
+2. quality checks (using `black` and `isort` and `pylint`).
+
+To run any command, you can do `make test` or `make quality_checks`
