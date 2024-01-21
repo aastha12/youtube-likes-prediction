@@ -36,10 +36,40 @@ pytest deployment/test_predict.py
 In the `test` venv and folder,, run
 ```bash
 pipenv install --dev pylint
-
+pipenv install --dev black isort
 ```
 
-Then to run the linter on a file: 
+To see what changes Black would have made to a file:
 ```bash
-pylint ../model/likes-prediction.py
+black ../model/likes-prediction.py --diff
 ```
+
+To apply those changes run:
+```bash
+black ../model/likes-prediction.py
+black ../prefect-workflow/likes-prediction.py
+black ../deployment/predict.py
+black ../monitoring/evidently_metrics_calculation.py
+```
+
+To see what changes isort would have made to a file:
+```bash
+isort ../model/likes-prediction.py --diff
+```
+
+To apply those changes run:
+```bash
+isort ../model/likes-prediction.py
+isort ../prefect-workflow/likes-prediction.py
+isort ../deployment/predict.py
+isort ../monitoring/evidently_metrics_calculation.py
+```
+
+Then to run the linter on a file:
+```bash
+cd prefect-workflow
+. /Users/aasth/.local/share/virtualenvs/prefect-workflow-q6xtxK7U/bin/activate
+pylint likes-prediction.py
+```
+
+## Pre-commit hooks:

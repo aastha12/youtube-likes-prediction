@@ -16,6 +16,7 @@ psycopg-binary = "*"
 
 [dev-packages]
 requests = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.11"

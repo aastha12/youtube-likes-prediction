@@ -1,23 +1,25 @@
 import pickle
-import pandas as pd
-from flask import Flask, request, jsonify
 
-with open('lightgbm_reg.bin', 'rb') as f_in:
+import pandas as pd
+from flask import Flask, jsonify, request
+
+with open("lightgbm_reg.bin", "rb") as f_in:
     model = pickle.load(f_in)
 
-def prepare_data(video):
 
+def prepare_data(video):
     df = pd.DataFrame([video])
 
-    df = df[(df['videoViewCount']>=0) & 
-        (df['videoDislikeCount']>=0) & 
-        (df['VideoCommentCount']>=0)
-        ]    
-    
-    for cat_cols in df.select_dtypes(include='object').columns:
-        df[cat_cols] = df[cat_cols].astype('category') 
+    df = df[
+        (df["videoViewCount"] >= 0)
+        & (df["videoDislikeCount"] >= 0)
+        & (df["VideoCommentCount"] >= 0)
+    ]
 
-    return df 
+    for cat_cols in df.select_dtypes(include="object").columns:
+        df[cat_cols] = df[cat_cols].astype("category")
+
+    return df
 
 
 def predict(data):
@@ -27,18 +29,18 @@ def predict(data):
 
 app = Flask("yt-likes-prediction")
 
-@app.route('/predict',methods=['POST'])
+
+@app.route("/predict", methods=["POST"])
 def predict_endpoint():
     video = request.get_json()
 
     data = prepare_data(video)
-    pred = predict(data)    
+    pred = predict(data)
 
-    result = {
-        'videoLikeCount':pred
-    }
+    result = {"videoLikeCount": pred}
 
     return jsonify(result)
 
-if __name__=="__main__":
-    app.run(debug=True,host='0.0.0.0',port=9696)
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=9696)
