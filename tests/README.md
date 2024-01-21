@@ -73,3 +73,19 @@ pylint likes-prediction.py
 ```
 
 ## Pre-commit hooks:
+
+We can configure to run pytests,pylint,black and isort automatically before committing.
+
+In the `test` venv and in the `youtube-likes-prediction` folder, run:
+```bash
+pipenv install --dev pre-commit
+```
+Do `git init` to initialize an empty git repository in the code folder. You'll see a `.git` folder being created after you execute the `git init` command. Type `ls -a` in the command line to verify that the .git folder was created.
+
+Then we need to create a `.pre-commit-config.yaml` file before running the `pre-commit` command. Type `pre-commit sample-config` (in the `youtube-likes-prediction` directory with the `test` environment activated) to see see a sample content for the `.pre-commit-config.yaml` file. You can copy this content and then create a `.pre-commit-config.yaml` file and paste the contents in this file.
+
+Run `pre-commit install` in the command line. This creates a pre-commit folder in the `.git` folder. The`.git` folder isn't committed to git. The `.git` folder is a local folder that is created which means whenever you clone a repo, you need to run `pre-commit install` first to create the pre-commit folder.
+
+Now, proceed to do `git add .` and `git commit -m "some message"` and you will see that some hooks may say "Failed" but it will have a "files were modified by this hook" message which means the hook modified the file to make it pass. So the next time you do `git add .` and `git commit`, you'll notice that same hook will now Pass.
+
+<img src="/images/pre-commit-hooks.png" width=700>
